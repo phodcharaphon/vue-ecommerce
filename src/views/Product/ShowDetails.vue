@@ -27,10 +27,10 @@
                     </div>
                 </div>
                 <div class="mt-5 text-right">
-                    <button id="wishlist-button" class="btn mr-3 p-1 py-0"
+                    <!-- <button id="wishlist-button" class="btn mr-3 p-1 py-0"
                         :class="{ product_added_wishlist: isAddedToWishlist }" @click="addToWishList(this.id)">
                         {{ wishlistString }}
-                    </button>
+                    </button> -->
                     <button id="show-cart-button" type="button" class="btn mr-3 p-1 py-0 " @click="listCartItems">
                         Show Cart
                         <ion-icon name="cart-outline" v-pre></ion-icon>

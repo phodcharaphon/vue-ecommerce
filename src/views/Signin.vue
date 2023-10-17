@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="conatiner">
     <div class="row">
       <div class="col-12 justify-content-center d-flex flex-row pt-5">
@@ -14,7 +15,7 @@
               <input v-model="password" type="password" class="form-control" />
             </div>
             <button class="btn btn-primary mt-2">Signin</button>
-            <RouterLink class="btn btn-secondary mt-2 ml-3" :to="{name: 'Signup'}">Signup</RouterLink>
+            <RouterLink class="btn btn-secondary mt-2 ml-3" :to="{ name: 'Signup' }">Signup</RouterLink>
           </form>
         </div>
       </div>
@@ -24,8 +25,11 @@
 <script>
 import axios from 'axios';
 import swal from 'sweetalert';
+import Navbar from '../components/Navbar.vue';
+
 export default {
   props: ["baseURL"],
+  components: { Navbar },
   data() {
     return {
       email: null,

@@ -3,8 +3,8 @@
     <div id="background-div" class="page-holder bg-cover">
       <div class="container py-5">
         <header class="text-left py-5">
-          <h3><button @click="slideStart" id="heading" class="badge px-2 py-2"> Start shopping</button></h3>
-          <p id="demo" class="badge lead mb-0 p-1 rounded"> Demo Ecommerce</p>
+          <h3><button @click="slideStart" id="heading" class="badge px-2 py-2">Shopping</button></h3>
+          <!-- <p id="demo" class="badge lead mb-0 p-1 rounded"> Demo Ecommerce</p> -->
         </header>
       </div>
     </div>
@@ -12,21 +12,21 @@
     <div class="container" id="start-shopping">
       <div class="row">
         <div class="col-12 text-left">
-          <h2 class="pt-3"> Top Categories</h2>
+          <h2 class="pt-3">สินค้า</h2>
         </div>
       </div>
 
       <div class="row">
-        <div v-for="index in this.categorySize" :key="index"
-          class="col-md-6 col-xl-4 col-12 pt-3 justify-content-around d-flex">
-          <CategoryBox class="shadow" :category="categories[index - 1]" />
+        <div v-for="index in this.productSize" :key="index"
+          class="col-md-4 col-xl-4 col-12 pt-3 justify-content-around d-flex">
+          <ProductBox class="shadow" :product="products[index - 1]" />
         </div>
       </div>
     </div>
 
-    <hr>
+    <!-- <hr> -->
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-12 text-left">
           <h2 class="pt-3"> Top Products</h2>
@@ -38,7 +38,7 @@
           <ProductBox class="shadow" :product="products[index - 1]" />
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- <button @click="slideUp" class="btn btn-primary ml-5 mt-5">
@@ -78,7 +78,7 @@ export default {
   },
   mounted() {
     this.categorySize = Math.min(6, this.categories.length);
-    this.productSize = Math.min(6, this.products.length);
+    this.productSize = Math.min(12, this.products.length);
   }
 };
 </script>

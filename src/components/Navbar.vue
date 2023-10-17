@@ -14,43 +14,43 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!--      Search Bar-->
-      <form class="d-flex mt-1" role="search">
+      <!-- <form class="d-flex mt-1" role="search">
         <input class="form-control me-2 mt-1" style="width: 100%;" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success mt- my-sm-0 ml-2 mt-1" type="submit">Search</button>
-      </form>
+      </form> -->
 
       <!--      DropDowns-->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" v-if="token">
           <a class="nav-link dropdown-toggle" href="#" id="browseDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Browse
+            Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="browseDropdown">
-            <RouterLink class="dropdown-item" :to="{ name: 'Admin' }">Admin</RouterLink>
-            <RouterLink class="dropdown-item" :to="{ name: 'Home' }">Home</RouterLink>
-            <RouterLink class="dropdown-item" :to="{ name: 'AdminProduct' }">Product</RouterLink>
-            <RouterLink class="dropdown-item" :to="{ name: 'AdminCategory' }">Category</RouterLink>
+            <!-- <RouterLink class="dropdown-item" :to="{ name: 'Admin' }">Admin</RouterLink> -->
+            <!-- <RouterLink class="dropdown-item" :to="{ name: 'Home' }">Home</RouterLink> -->
+            <RouterLink class="dropdown-item" :to="{ name: 'AdminProduct' }">Add Product</RouterLink>
+            <RouterLink class="dropdown-item" :to="{ name: 'AdminCategory' }">Add Category</RouterLink>
           </div>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="accountsDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Accounts
+            ข้อมูลส่วนตัว
           </a>
           <div class="dropdown-menu" aria-labelledby="accountsDropdown">
-            <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signin' }">Wishlist</RouterLink>
-            <RouterLink class="dropdown-item" v-else :to="{ name: 'Wishlist' }">Wishlist</RouterLink>
-            <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signin' }">Log In</RouterLink>
-            <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signup' }">Sign Up</RouterLink>
-            <a class="dropdown-item" v-if="token" href="#" @click="signout">Sign Out</a>
+            <!-- <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signin' }">Wishlist</RouterLink>
+            <RouterLink class="dropdown-item" v-else :to="{ name: 'Wishlist' }">Wishlist</RouterLink> -->
+            <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signin' }">เข้าสู่ระบบ</RouterLink>
+            <RouterLink class="dropdown-item" v-if="!token" :to="{ name: 'Signup' }">สมัครสมาชิก</RouterLink>
+            <a class="dropdown-item" v-if="token" href="#" @click="signout">ออกจากระบบ</a>
           </div>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <RouterLink class="nav-link text-light" :to="{ name: 'Order' }">Orders</RouterLink>
-        </li>
+        </li> -->
 
         <li class="nav-item">
           <div id="cart">

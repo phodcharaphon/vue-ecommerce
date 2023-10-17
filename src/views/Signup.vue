@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="container">
     <div class="row">
       <div class="col-12 text-center pt-3">
@@ -56,8 +57,11 @@
 <script>
 import axios from 'axios';
 import swal from 'sweetalert';
+import Navbar from '../components/Navbar.vue';
+
 export default {
   props: ["baseURL"],
+  components: { Navbar },
   data() {
     return {
       email: null,
@@ -81,7 +85,7 @@ export default {
         await axios
           .post(`${this.baseURL}user/signup`, user)
           .then(() => {
-            this.$router.replace("/");
+            this.$router.replace("/signin");
             swal({
               text: "Sign Up Success !",
               icon: "success",

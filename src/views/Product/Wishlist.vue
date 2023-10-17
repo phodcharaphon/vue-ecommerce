@@ -19,6 +19,7 @@ import ProductBox from '../../components/Product/ProductBox.vue';
 
 export default {
     name: "Product",
+    components: { ProductBox },
     data() {
         return {
             token: null,
@@ -40,8 +41,7 @@ export default {
     mounted() {
         this.token = localStorage.getItem("token");
         this.fetchWishList();
-    },
-    components: { ProductBox }
+    }
 }
 </script>
 

@@ -100,32 +100,19 @@ export default {
       this.$router.push({ name: 'Checkout' });
     },
     deleteItem(itemId) {
-      swal({
-        title: "ต้องการลบรายการนี้หรือไม่?",
-        text: "คุณไม่สามารถยกเลิกการกระทำนี้ได้",
-        icon: "warning",
-        buttons: {
-          cancel: "ยกเลิก",
-          confirm: "ตกลง",
-        },
-        dangerMode: true,
-      }).then((willDelete) => {
-        if (willDelete) {
-          axios
-            .delete(`${this.baseURL}cart/delete/${itemId}/?token=${this.token}`)
-            .then(
-              (response) => {
-                if (response.status == 200) {
-                  this.$router.go(0);
-                }
-                this.$emit('fetchData');
-              },
-              (error) => {
-                console.log(error);
-              }
-            );
-        }
-      });
+      axios
+        .delete(`${this.baseURL}cart/delete/${itemId}/?token=${this.token}`)
+        .then(
+          (response) => {
+            if (response.status == 200) {
+              this.$router.go(0);
+            }
+            this.$emit('fetchData');
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
     },
     showDetails(productId) {
       this.$router.push({
