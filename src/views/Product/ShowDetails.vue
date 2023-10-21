@@ -7,22 +7,22 @@
             </div>
 
             <div class="col-md-6 col-12 pt-3 pt-md-0">
-                <h4>{{ product.name }}</h4>
-                <h6 class="category font-italic">{{ category.categoryName }}</h6>
-                <h6 class="font-weight-bold">{{ product.price }} บาท</h6>
-                <p>{{ product.description }}</p>
+                <h4>ชื่อสินค้า {{ product.name }}</h4>
+                <h6 class="category">หมวดหมู่ {{ category.categoryName }}</h6>
+                <h6 class="font-weight-bold">ราคา {{ product.price }} บาท</h6>
+                <p>รายละเอียด {{ product.description }}</p>
 
                 <div class="d-flex flex-row justify-content-between align-items-center">
                     <div class="input-group col-md-3 col-4 p-0">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Quantity</span>
+                            <span class="input-group-text">จำนวน</span>
                             <input type="number" class="form-control" v-model="quantity" />
                         </div>
                     </div>
 
                     <div class="input-group col-md-3 col-4 p-0">
                         <button class="btn" id="add-to-cart-button" @click="addToCart(this.id)" type="button">
-                            Add to Cart
+                            หยิบ
                         </button>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         {{ wishlistString }}
                     </button> -->
                     <button id="show-cart-button" type="button" class="btn mr-3 p-1 py-0 " @click="listCartItems">
-                        Show Cart
+                        ตระกร้า
                         <ion-icon name="cart-outline" v-pre></ion-icon>
                     </button>
                 </div>

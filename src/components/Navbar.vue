@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <!--    Logo-->
     <RouterLink class="navbar-brand" :to="{ name: 'Home' }">
-      <a class="">Demo Ecommerce</a>
+      <a class="">ร้านค้าออนไลน์</a>
       <!-- <img id="logo" src="../assets/icon.png" /> -->
     </RouterLink>
 

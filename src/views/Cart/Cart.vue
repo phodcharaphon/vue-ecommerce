@@ -19,18 +19,18 @@
             </RouterLink>
           </h6>
           <p id="item-price" class="mb-0 font-weight-bold">
-            {{ cartItem.product.price }} บาท
+            ราคาต่อชิ้น {{ cartItem.product.price }} บาท
           </p>
           <p id="item-quantity" class="mb-0">
             จำนวน :
             <input type="number" size="1" class="border-bottom border-top-0 border-left-0 border-right-0"
-              style="width: 50px; height: 30px;" v-model="cartItem.quantity" />
+              style="width: 50px; height: 30px;" v-model="cartItem.quantity" /> ชิ้น
           </p>
           <p id="item-total-price" class="mb-0">
             ราคา :
             <span class="font-weight-bold">
               {{ cartItem.product.price * cartItem.quantity }}
-            </span>
+            </span> บาท
           </p>
 
         </div>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="total-cost pt-2 text-right">
-      <h5>จำนวน : {{ totalQuantity }} </h5>
+      <h5>จำนวน : {{ totalQuantity }} ชิ้น</h5>
       <h5>รวม : {{ formatTotalCost }} บาท</h5>
       <button :disabled="isDisabled" type="button" class="btn btn-primary confirm" @click="checkout">
         Checkout

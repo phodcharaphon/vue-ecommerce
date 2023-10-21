@@ -3,7 +3,7 @@
     <div id="background-div" class="page-holder bg-cover">
       <div class="container py-5">
         <header class="text-left py-5">
-          <h3><button @click="slideStart" id="heading" class="badge px-2 py-2">Shopping</button></h3>
+          <h3><button @click="slideStart" id="heading" class="badge px-2 py-2">ร้านค้าออนไลน์</button></h3>
           <!-- <p id="demo" class="badge lead mb-0 p-1 rounded"> Demo Ecommerce</p> -->
         </header>
       </div>
